@@ -1,3 +1,6 @@
+/* I decided to approach this project as a repeating pattern, so I built out elements, put them into motifs and created tiles. I've run out of time to take the next step of turning it into a fully customizable pattern, but I believe this is a good first step */
+
+
 // TODO: 
 // Is there a more programmatic method to get these mesusrements?
 // It took many minute adjustments to get this to work 
@@ -31,9 +34,9 @@ class Element {
 
 class MotifMirror {
   constructor(){
-    // motif construction
+    // mirror motif construction
     this.offsetY = 0,
-    this.offsetX = -12
+    this.offsetX = -12.3 //12.1
   }
   
   display() {
@@ -50,7 +53,7 @@ class MotifGlide {
   constructor(){
     // Glid motif construction
     this.offsetY = 0,
-    this.offsetX = -24.5
+    this.offsetX = -24.9 //24.6
   }
   
   display() {
@@ -75,7 +78,7 @@ class Tile {
   const motifGlide = new MotifGlide()
   motifMirror.display()
   rotate(PI);
-  translate(0,0.2)
+  translate(0,0.1)
   motifGlide.display()
   }
 }
@@ -83,12 +86,13 @@ class Tile {
 function draw() {
   background(200);
 
+  // TODO: Turn this into a Pattern class
   const tile = new Tile();
   translate(200,125)
   scale(5)
   tile.display()
   rotate((3*PI)/2)
-  translate(-12, -25)
+  translate(-12.3, -25)
   tile.display()
   
   

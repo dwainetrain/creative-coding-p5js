@@ -2,4 +2,6 @@
 
 Files for Manning Creative Coding liveProject
 
-Test out git connection.
+Assignment #1:
+Logo by TRÜF Creative:
+https://www.behance.net/gallery/16259097/TRUEF-Mixed-Logos-Marks
