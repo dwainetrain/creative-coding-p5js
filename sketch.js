@@ -1,8 +1,14 @@
+// TODO: 
+// Is there a more programmatic method to get these mesusrements?
+// It took many minute adjustments to get this to work 
+// And scaling the elements will break the deisgn
+// I think I'm confused by rotation and origin
+
 function setup() {
   createCanvas(400, 400);
 }
 
-class Piece {
+class Element {
   constructor(){
     // arc construction
     this.x = 0,
@@ -31,7 +37,7 @@ class MotifMirror {
   }
   
   display() {
-      const slice = new Piece();
+      const slice = new Element();
       
       slice.display();
       rotate(PI/2)
@@ -44,11 +50,11 @@ class MotifGlide {
   constructor(){
     // Glid motif construction
     this.offsetY = 0,
-    this.offsetX = -24.6
+    this.offsetX = -24.5
   }
   
   display() {
-      const slice = new Piece();
+      const slice = new Element();
       slice.display();
       translate(this.offsetY, this.offsetX);
       slice.display();
@@ -65,14 +71,12 @@ class Tile {
 
   
   display() {
-    const motifMirror = new MotifMirror()
+  const motifMirror = new MotifMirror()
   const motifGlide = new MotifGlide()
   motifMirror.display()
-  // push();
   rotate(PI);
   translate(0,0.2)
   motifGlide.display()
-  // pop();
   }
 }
 
@@ -80,8 +84,8 @@ function draw() {
   background(200);
 
   const tile = new Tile();
-  translate(100,100)
-  scale(4)
+  translate(200,125)
+  scale(5)
   tile.display()
   rotate((3*PI)/2)
   translate(-12, -25)
